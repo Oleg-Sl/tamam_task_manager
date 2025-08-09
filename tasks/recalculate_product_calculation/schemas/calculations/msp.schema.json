@@ -1,0 +1,118 @@
+{
+    "id": "id",
+    "entityTypeId": "entityTypeId",
+    "productId": "parentId172",
+
+    "parent_lead": "parentId1",
+    "parent_deal": "parentId2",
+    "parent_product": "parentId172",
+    "parent_fot": "parentId1048",
+
+    "date_of_calculation": "ufCrm27_1707313572",
+    "date_of_calculation_today": "ufCrm27_1707314281",
+    "constant_expenses": "ufCrm27_1711594918",
+    "general_comment": "ufCrm27_1708681913",
+    "cost_price": "ufCrm27_1713689975",
+    "cost_price_total": "ufCrm27_1733206071",
+
+    "total_materials": "ufCrm27_1708681937",
+    "final_calculation": "ufCrm27_1714906091",
+    "calculation_fixed": "ufCrm27_1719148542",
+
+    "is_template_potochka": "ufCrm27_1753012350",
+
+    "total_work": {
+        "overall_rating": "ufCrm27_1708832160",
+        "value": "ufCrm27_1752990988",
+        "amount": "ufCrm27_1709392252",
+        "comments": "ufCrm27_1708832266"
+    },
+
+    "mdf_6mm": {
+        "type": "material",
+        "value": "ufCrm27_1707314359",
+        "amount": "ufCrm27_1707314461",
+        "comments": "ufCrm27_1708661569"
+    },
+    "ppu_el20mm": {
+        "type": "material",
+        "value": "ufCrm27_1708658171",
+        "amount": "ufCrm27_1708658231",
+        "comments": "ufCrm27_1708831214"
+    },
+    "ppu_el30mm": {
+        "type": "material",
+        "value": "ufCrm27_1708658243",
+        "amount": "ufCrm27_1708658255",
+        "comments": "ufCrm27_1708831245"
+    },
+    "ppu_el40mm": {
+        "type": "material",
+        "value": "ufCrm27_1708658269",
+        "amount": "ufCrm27_1708658280",
+        "comments": "ufCrm27_1708831295"
+    },
+    "fabric1": {
+        "type": "fabric",
+        "number": 1,
+        "value": "ufCrm27_1708658296",
+        "amount": "ufCrm27_1708658322",
+        "comments": "ufCrm27_1708831435"
+    },
+    "fabric2": {
+        "type": "fabric",
+        "number": 2,
+        "value": "ufCrm27_1708658336",
+        "amount": "ufCrm27_1708658346",
+        "comments": "ufCrm27_1708831473"
+    },
+    "fabric3": {
+        "type": "fabric",
+        "number": 3,
+        "value": "ufCrm27_1708658363",
+        "amount": "ufCrm27_1708658373",
+        "comments": "ufCrm27_1708831505"
+    },
+    "decor1": {
+        "type": "material",
+        "price": "ufCrm27_1708658618",
+        "value": "ufCrm27_1708661479",
+        "amount": "ufCrm27_1708661548",
+        "comments": "ufCrm27_1708661656"
+    },
+    "decor2": {
+        "type": "material",
+        "price": "ufCrm27_1708661678",
+        "value": "ufCrm27_1708661703",
+        "amount": "ufCrm27_1708661720",
+        "comments": "ufCrm27_1708661741"
+    },
+    "decor3": {
+        "type": "material",
+        "price": "ufCrm27_1708831676",
+        "value": "ufCrm27_1708831717",
+        "amount": "ufCrm27_1708831735",
+        "comments": "ufCrm27_1708680919"
+    },
+    "other1": {
+        "type": "material",
+        "price": "ufCrm65_1713852768",
+        "amount": "ufCrm27_1708831948",
+        "value": "ufCrm27_1708831993",
+        "comments": "ufCrm27_1708832035"
+    },
+    "other2": {
+        "type": "material",
+        "price": "ufCrm27_1708832057",
+        "value": "ufCrm27_1708832090",
+        "amount": "ufCrm27_1708832104",
+        "comments": "ufCrm27_1708661611"
+    },
+    "subcontractor_work": {
+        "type": "material",
+        "price": "ufCrm27_1714098015",
+        "value": "ufCrm27_1714098035",
+        "amount": "ufCrm27_1714098047",
+        "comments": "ufCrm27_1714098057"
+    }
+}

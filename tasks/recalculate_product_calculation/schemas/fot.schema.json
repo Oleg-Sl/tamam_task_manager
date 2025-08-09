@@ -1,0 +1,86 @@
+{
+    "summary_cost": "ufCrm93_1750821799",
+    "is_template_potochka": "ufCrm93_1730297063",
+
+    "development": {
+        "title": "Разработка",
+        "estimated_amount": "ufCrm93_1723537303",
+        "growth_coefficient": "ufCrm93_1723537342",
+        "final_amount": "ufCrm93_1723537368",
+        "allocated_hours": "ufCrm93_1726817717",
+        "comment": "ufCrm93_1723537384"
+    },
+    "saw": {
+        "title": "Пилка",
+        "estimated_amount": "ufCrm93_1723537408",
+        "growth_coefficient": "ufCrm93_1723537488",
+        "final_amount": "ufCrm93_1723537594",
+        "allocated_hours": "ufCrm93_1726817766",
+        "comment": "ufCrm93_1723537693"
+    },
+    "assembly": {
+        "title": "Сборка",
+        "estimated_amount": "ufCrm93_1723537429",
+        "growth_coefficient": "ufCrm93_1723537505",
+        "final_amount": "ufCrm93_1723537613",
+        "allocated_hours": "ufCrm93_1726817832",
+        "comment": "ufCrm93_1723537710"
+    },
+    "foam_processing": {
+        "title": "ППУ",
+        "estimated_amount": "ufCrm93_1723537445",
+        "growth_coefficient": "ufCrm93_1723537521",
+        "final_amount": "ufCrm93_1723537627",
+        "allocated_hours": "ufCrm93_1726817923",
+        "comment": "ufCrm93_1723537831"
+    },
+    "sewing": {
+        "title": "Швейка",
+        "estimated_amount": "ufCrm93_1723537457",
+        "growth_coefficient": "ufCrm93_1723537538",
+        "final_amount": "ufCrm93_1723537641",
+        "allocated_hours": "ufCrm93_1726817944",
+        "comment": "ufCrm93_1723537845"
+    },
+    "upholstery": {
+        "title": "Обтяжка",
+        "estimated_amount": "ufCrm93_1723537469",
+        "growth_coefficient": "ufCrm93_1723537554",
+        "final_amount": "ufCrm93_1723537654",
+        "allocated_hours": "ufCrm93_1726817965",
+        "comment": "ufCrm93_1723537861"
+    },
+
+    "carpentry": {
+        "title": "Столярка",
+        "estimated_amount": "ufCrm93_1724602922",
+        "growth_coefficient": "ufCrm93_1724603020",
+        "final_amount": "ufCrm93_1724603097",
+        "allocated_hours": "ufCrm93_1726817986",
+        "comment": "ufCrm93_1724603181"
+    },
+    "carpentry_assembly": {
+        "title": "Столярка (сборка)",
+        "estimated_amount": "ufCrm93_1724602957",
+        "growth_coefficient": "ufCrm93_1724603039",
+        "final_amount": "ufCrm93_1724603120",
+        "allocated_hours": "ufCrm93_1726818006",
+        "comment": "ufCrm93_1724603199"
+    },
+    "painting_preparation": {
+        "title": "Покраска (подготовка)",
+        "estimated_amount": "ufCrm93_1724602974",
+        "growth_coefficient": "ufCrm93_1724603053",
+        "final_amount": "ufCrm93_1724603138",
+        "allocated_hours": "ufCrm93_1726818054",
+        "comment": "ufCrm93_1724603218"
+    },
+    "painting": {
+        "title": "Покраска",
+        "estimated_amount": "ufCrm93_1724602995",
+        "growth_coefficient": "ufCrm93_1724603075",
+        "final_amount": "ufCrm93_1724603155",
+        "allocated_hours": "ufCrm93_1726818030",
+        "comment": "ufCrm93_1724603238"
+    }
+}

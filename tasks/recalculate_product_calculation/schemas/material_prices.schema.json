@@ -1,0 +1,34 @@
+{
+    "date_of_price_validity": "ufCrm25_1707304718",
+    "plywood_15mm": "ufCrm25_1707304769",
+    "plywood_6mm": "ufCrm25_1708098461",
+    "plywood_3mm": "ufCrm25_1707304790",
+    "mdf_6mm": "ufCrm25_1708095897",
+    "mdf_10mm": "ufCrm25_1708098585",
+    "mdf_15mm": "ufCrm25_1714099350",
+    "mdf_19mm": "ufCrm25_1733808701",
+    "mdf_25mm": "ufCrm25_1708098686",
+    "fiberboard": "ufCrm25_1734621664",
+    "elec_cardboard": "ufCrm25_1734622112",
+    "ppu_el20mm": "ufCrm25_1707305252",
+    "ppu_el30mm": "ufCrm25_1707305305",
+    "ppu_el40mm": "ufCrm25_1708098751",
+    "ppu_el50mm": "ufCrm25_1707305332",
+    "ppu_elax30mm": "ufCrm25_1707304812",
+    "elax_40mm": "ufCrm25_1707305129",
+    "elax_50mm": "ufCrm25_1707305144",
+
+    "latex_30mm": "ufCrm25_1707305932",
+    "memory_50mm": "ufCrm25_1713685940",
+
+    "bed_lift_mechanism_medium": "ufCrm25_1713844329",
+    "bed_bottoms": "ufCrm25_1713845512",
+    "sockets_and_switches": "ufCrm25_1713845577",
+    "natural_stone_square_meter": "ufCrm25_1714101333",
+    "ceramic_granite_square_meter": "ufCrm25_1714101349",
+    "knee_glass_square_meter": "ufCrm25_1714101361",
+    "mdf_paint_kg": "ufCrm25_1714099485",
+
+    "paint": "ufCrm25_1714099485",
+    "module_box": "ufCrm25_1714811227"
+}

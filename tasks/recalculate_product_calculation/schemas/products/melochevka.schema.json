@@ -1,0 +1,80 @@
+{
+    "id": "id",
+    "created_time": "createdTime",
+    "updated_time": "updatedTime",
+    "entity_type_id": "entityTypeId",
+    "parent_lead": "parentId1",
+    "parent_deal": "parentId2",
+
+    "is_template_potochka": "ufCrm63_1728261830",
+
+    "date_of_contract_delivery": "ufCrm63_1715530407",
+    "sketch": "ufCrm63_1718036033",
+    "sent_to_workshop": "ufCrm63_1718036470",
+
+    "link_client_doc": "ufCrm63_1714708447",
+    "link_workshop_doc": "ufCrm63_1714708455",
+
+    "delivery_city": "ufCrm63_1713514517",
+    "quantity": "ufCrm63_1713514573",
+    "dir_id": "ufCrm63_1713514605",
+    "is_active": "ufCrm63_1713514617",
+    "is_service": "ufCrm63_1728799991",
+    "is_measured": "ufCrm63_1713514633",
+    "is_exhibited": "ufCrm63_1727156507",
+    "item_id": "ufCrm63_1714229711",
+    "item_position_id": "ufCrm63_1714367361",
+    "item_potochka_id": "ufCrm63_1716305042",
+    "item_potochka_variation_id": "ufCrm63_1727882303",
+
+    "is_exist": "ufCrm63_1714295133",
+    "product_description": "ufCrm63_1714382553",
+    "is_potochka": "ufCrm63_1714839691",
+    "calculation_id": "ufCrm63_1714910144",
+    "delivery_to_msk": "ufCrm63_1716434621",
+
+    "created_by": "ufCrm63_1715516519",
+    "updated_by": "ufCrm63_1715516532",
+
+    "work_type": "ufCrm63_1715475502",
+
+    "btn_save": "ufCrm63_1714991307",
+    "btn_remove": "ufCrm63_1714991314",
+    "btn_copy": "ufCrm63_1714991328",
+
+    "free_title": "ufCrm63_1723010358",
+    "manager_description": "ufCrm63_1713514921",
+    "description": "ufCrm63_1713514840",
+    "manager_notes": "ufCrm63_1713514897",
+
+    "canvas_main": "ufCrm63_1714817461",
+    "canvas_screen_main": "ufCrm63_1713514588",
+    "main_photo": "ufCrm63_1714817489",
+
+    "canvas_1": "ufCrm63_1714059889",
+    "canvas_screen_1": "ufCrm63_1714229560",
+    "photo1_1": "ufCrm63_1713514732",
+    "photo1_2": "ufCrm63_1713514744",
+    "photo1_3": "ufCrm63_1713514756",
+    "photo1_4": "ufCrm63_1713514772",
+    "photo1_5": "ufCrm63_1713514787",
+    "photo1_6": "ufCrm63_1713514798",
+
+    "canvas_2": "ufCrm63_1714059932",
+    "canvas_screen_2": "ufCrm63_1714229591",
+    "photo2_1": "ufCrm63_1713514811",
+    "photo2_2": "ufCrm63_1713514821",
+    "photo2_3": "ufCrm63_1713682067",
+    "photo2_4": "ufCrm63_1713682095",
+    "photo2_5": "ufCrm63_1713682110",
+    "photo2_6": "ufCrm63_1713682121",
+
+    "canvas_3": "ufCrm63_1716709856",
+    "canvas_screen_3": "ufCrm63_1716709864",
+    "photo3_1": "ufCrm63_1716709876",
+    "photo3_2": "ufCrm63_1716709896",
+    "photo3_3": "ufCrm63_1716709905",
+    "photo3_4": "ufCrm63_1716709918",
+    "photo3_5": "ufCrm63_1716709930",
+    "photo3_6": "ufCrm63_1716709944"
+}

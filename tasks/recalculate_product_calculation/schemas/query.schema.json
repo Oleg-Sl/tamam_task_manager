@@ -1,0 +1,26 @@
+{
+    "title": "title",
+    "type_product": "ufCrm95_1723644276",
+    "is_question": "ufCrm95_1723802156",
+    "question": "ufCrm95_1723644347",
+    "description": "ufCrm95_1723649609",
+    "description_action": "ufCrm95_1724770245",
+    "show": "ufCrm95_1723649746",
+
+    "check_function": "ufCrm95_1724916015",
+    "product_field": "ufCrm95_1724916041",
+    "control_value": "ufCrm95_1724916065",
+
+    "coefficients": {
+        "development": "ufCrm95_1723649624",
+        "saw": "ufCrm95_1723649667",
+        "assembly": "ufCrm95_1723649684",
+        "foam_processing": "ufCrm95_1723802238",
+        "sewing": "ufCrm95_1723802260",
+        "upholstery": "ufCrm95_1723802273",
+        "carpentry": "ufCrm95_1723802296",
+        "carpentry_assembly": "ufCrm95_1723802318",
+        "painting": "ufCrm95_1723802358",
+        "painting_preparation": "ufCrm95_1723802339"
+    }
+}

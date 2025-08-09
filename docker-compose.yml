@@ -1,0 +1,16 @@
+
+services:
+  postgres:
+    image: postgres:14-alpine
+    container_name: postgres_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_NAME: tamam_product_manager
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: paSsWoRd1
+
+volumes:
+  postgres_data:

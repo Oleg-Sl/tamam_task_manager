@@ -1,0 +1,107 @@
+{
+    "id": "id",
+    "created_time": "createdTime",
+    "updated_time": "updatedTime",
+    "entity_type_id": "entityTypeId",
+    "parent_lead": "parentId1",
+    "parent_deal": "parentId2",
+
+    "is_template_potochka": "ufCrm77_1728261767",
+
+    "date_of_contract_delivery": "ufCrm77_1715530435",
+
+    "sketch": "ufCrm77_1718036074",
+    "sent_to_workshop": "ufCrm77_1718036447",
+
+    "link_client_doc": "ufCrm77_1714708767",
+    "link_workshop_doc": "ufCrm77_1714708772",
+
+    "delivery_city": "ufCrm77_1714055105",
+    "link": "ufCrm77_1714055075",
+    "reference_point": "ufCrm77_1714055087",
+    "quantity": "ufCrm77_1714055115",
+    "dir_id": "ufCrm77_1714055052",
+    "is_active": "ufCrm77_1714055009",
+    "is_service": "ufCrm77_1728800009",
+    "is_measured": "ufCrm77_1714055040",
+    "is_exhibited": "ufCrm77_1727156526",
+    "item_id": "ufCrm77_1714662166",
+    "item_positionId": "ufCrm77_1714662208",
+    "item_potochka_id": "ufCrm77_1716305073",
+    "item_potochka_variation_id": "ufCrm77_1727882320",
+
+    "is_exist": "ufCrm77_1714662133",
+    "product_description": "ufCrm77_1714662107",
+    "product_description_start": "ufCrm77_1718330289",
+
+    "is_potochka": "ufCrm77_1714839814",
+    "calculation_id": "ufCrm77_1714910084",
+    "delivery_to_msk": "ufCrm77_1716434643",
+
+    "btn_save": "ufCrm77_1714991120",
+    "btn_remove": "ufCrm77_1714991144",
+    "btn_copy": "ufCrm77_1714991165",
+
+    "created_by": "ufCrm77_1715516585",
+    "updated_by": "ufCrm77_1715516603",
+
+    "free_title": "ufCrm77_1714055263",
+    "common_dimensions_width": "ufCrm77_1714055274",
+    "common_dimensions_depth": "ufCrm77_1714055293",
+    "common_dimensions_height": "ufCrm77_1714055303",
+    "frame_variant": "ufCrm77_1726755531",
+    "frame_material": "ufCrm77_1714055341",
+    "frame_color":  "ufCrm77_1714055664",
+    "frame_ral":  "ufCrm77_1714055680",
+    "decor": "ufCrm77_1714055708",
+    "description": "ufCrm77_1714055718",
+
+    "back_material_2": "ufCrm77_1714055821",
+    "back_veneer_2": "ufCrm77_1714055966",
+    "back_color_2":  "ufCrm77_1714055987",
+    "back_ral_2":  "ufCrm77_1714055998",
+
+    "seat_material_3": "ufCrm77_1714056018",
+    "seat_veneer_3": "ufCrm77_1714056192",
+    "seat_color_3":  "ufCrm77_1714056208",
+    "seat_ral_3":  "ufCrm77_1714056218",
+
+    "accessories_4": "ufCrm77_1714056249",
+    "upholstery_fabric_collection_4": "ufCrm77_1714056296",
+    "decor_4": "ufCrm77_1714056323",
+    "description_4": "ufCrm77_1714056334",
+
+    "general_comments_5": "ufCrm77_1714056377",
+    "manager_notes_5": "ufCrm77_1714056390",
+
+    "canvas_main": "ufCrm77_1714817312",
+    "canvasScreenMain": "ufCrm77_1714055062",
+    "mainPhoto": "ufCrm77_1714817336",
+
+    "canvas_1": "ufCrm77_1714055236",
+    "canvas_screen_1": "ufCrm77_1714662240",
+    "photo1_1": "ufCrm77_1714056402",
+    "photo1_2": "ufCrm77_1714056425",
+    "photo1_3": "ufCrm77_1714056434",
+    "photo1_4": "ufCrm77_1714056446",
+    "photo1_5": "ufCrm77_1714056455",
+    "photo1_6": "ufCrm77_1714056464",
+
+    "canvas_2": "ufCrm77_1714055246",
+    "canvas_screen_2": "ufCrm77_1714662303",
+    "photo2_1": "ufCrm77_1714056475",
+    "photo2_2": "ufCrm77_1714056485",
+    "photo2_3": "ufCrm77_1714056495",
+    "photo2_4": "ufCrm77_1714056505",
+    "photo2_5": "ufCrm77_1714056516",
+    "photo2_6": "ufCrm77_1714056526",
+
+    "canvas_3": "ufCrm77_1716701160",
+    "canvas_screen_3": "ufCrm77_1716701170",
+    "photo3_1": "ufCrm77_1716701183",
+    "photo3_2": "ufCrm77_1716701198",
+    "photo3_3": "ufCrm77_1716701209",
+    "photo3_4": "ufCrm77_1716701222",
+    "photo3_5": "ufCrm77_1716701235",
+    "photo3_6": "ufCrm77_1716701248"
+}

@@ -1,0 +1,88 @@
+{
+    "type_product": "ufCrm91_1723471240",
+    "base_calculation": "ufCrm91_1723533874",
+    "base_measurement_value": "ufCrm91_1723538385",
+    "average_work_hours_per_month": "ufCrm91_1723447829",
+    "unit_of_measurement_for_rate": "ufCrm91_1723471840",
+
+    "development": {
+        "base_salary_rate": "ufCrm91_1723471340",
+        "base_time_to_produce": "ufCrm91_1723471442",
+        "base_rate_per_unit": "ufCrm91_1723538793",
+        "cost_per_hour": "ufCrm91_1723650090"
+    },
+    "saw": {
+        "base_salary_rate": "ufCrm91_1723531972",
+        "base_time_to_produce": "ufCrm91_1723532230",
+        "base_rate_per_unit": "ufCrm91_1723538878",
+        "cost_per_hour": "ufCrm91_1723795974"
+    },
+    "assembly": {
+        "base_salary_rate": "ufCrm91_1723531994",
+        "base_time_to_produce": "ufCrm91_1723532247",
+        "base_rate_per_unit": "ufCrm91_1723538893",
+        "cost_per_hour": "ufCrm91_1723795992"
+    },
+    "foam_processing": {
+        "base_salary_rate": "ufCrm91_1723532009",
+        "base_time_to_produce": "ufCrm91_1723532265",
+        "base_rate_per_unit": "ufCrm91_1723538912",
+        "cost_per_hour": "ufCrm91_1723796015"
+    },
+    "sewing": {
+        "base_salary_rate": "ufCrm91_1723532021",
+        "base_time_to_produce": "ufCrm91_1723532286",
+        "base_rate_per_unit": "ufCrm91_1723538943",
+        "cost_per_hour": "ufCrm91_1723796031"
+    },
+    "upholstery": {
+        "base_salary_rate": "ufCrm91_1723532152",
+        "base_time_to_produce": "ufCrm91_1723532311",
+        "base_rate_per_unit": "ufCrm91_1723538960",
+        "cost_per_hour": "ufCrm91_1723796063",
+        "staff_count": "ufCrm91_1723805679"
+    },
+    "carpentry": {
+        "base_salary_rate": "ufCrm91_1723532172",
+        "base_time_to_produce": "ufCrm91_1723532468",
+        "base_rate_per_unit": "ufCrm91_1723796152",
+        "cost_per_hour": "ufCrm91_1723796124"
+    },
+    "carpentry_assembly": {
+        "base_salary_rate": "ufCrm91_1723532785",
+        "base_time_to_produce": "ufCrm91_1723533001",
+        "base_rate_per_unit": "ufCrm91_1723796178",
+        "cost_per_hour": "ufCrm91_1723796214"
+    },
+    "painting": {
+        "base_salary_rate": "ufCrm91_1723532965",
+        "base_time_to_produce": "ufCrm91_1723533569",
+        "base_rate_per_unit": "ufCrm91_1723796357",
+        "cost_per_hour": "ufCrm91_1723796378"
+    },
+    "painting_preparation": {
+        "base_salary_rate": "ufCrm91_1723532806",
+        "base_time_to_produce": "ufCrm91_1723533524",
+        "base_rate_per_unit": "ufCrm91_1723796301",
+        "cost_per_hour": "ufCrm91_1723796273"
+    },
+    "service": {
+        "base_salary_rate": "ufCrm91_1723533591",
+        "base_time_to_produce": "ufCrm91_1723533624",
+        "base_rate_per_unit": "ufCrm91_1723796440",
+        "cost_per_hour": "ufCrm91_1723796404"
+    },
+    "management": {
+        "base_salary_rate": "ufCrm91_1723533810",
+        "cost_per_hour": "ufCrm91_1723533654"
+    },
+    "rent": {
+        "base_salary_rate": "ufCrm91_1723533843",
+        "cost_per_hour": "ufCrm91_1723533687"
+    },
+    "packaging": {
+        "cost_per_unit": "ufCrm91_1723797057",
+        "materials_included": "ufCrm91_1723797096",
+        "cost_per_hour": "ufCrm91_1723796404"
+    }
+}

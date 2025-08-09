@@ -1,0 +1,136 @@
+{
+    "id": "id",
+    "entityTypeId": "entityTypeId",
+    "productId": "parentId186",
+
+    "parent_lead": "parentId1",
+    "parent_deal": "parentId2",
+    "parent_product": "parentId186",
+    "parent_fot": "parentId1048",
+
+    "date_of_calculation": "ufCrm81_1714101525",
+    "date_of_calculation_today": "ufCrm81_1714101581",
+    "constant_expenses": "ufCrm81_1714102725",
+    "general_comment": "ufCrm81_1714102740",
+    "cost_price": "ufCrm81_1714102751",
+    "cost_price_total": "ufCrm81_1733206085",
+
+    "total_materials": "ufCrm81_1714102558",
+    "final_calculation": "ufCrm81_1714906302",
+    "calculation_fixed": "ufCrm81_1719148452",
+
+    "is_template_potochka": "ufCrm81_1731936556",
+
+    "total_work": {
+        "value": "ufCrm81_1714102605",
+        "amount": "ufCrm81_1714102621",
+        "comments": "ufCrm81_1714102634"
+    },
+
+    "mdf_25mm": {
+        "type": "material",
+        "value": "ufCrm81_1714101622",
+        "amount": "ufCrm81_1714101630",
+        "comments": "ufCrm81_1714101643"
+    },
+    "mdf_10mm": {
+        "type": "material",
+        "value": "ufCrm81_1714101670",
+        "amount": "ufCrm81_1714101680",
+        "comments": "ufCrm81_1714101691"
+    },
+    "paint": {
+        "type": "material",
+        "value": "ufCrm81_1714101709",
+        "amount": "ufCrm81_1714101721",
+        "comments": "ufCrm81_1714101732"
+    },
+    "natural_stone_square_meter": {
+        "type": "material",
+        "value": "ufCrm81_1714101763",
+        "amount": "ufCrm81_1714101781",
+        "comments": "ufCrm81_1714101792"
+    },
+    "ceramic_granite_square_meter": {
+        "type": "material",
+        "value": "ufCrm81_1714101815",
+        "amount": "ufCrm81_1714101846",
+        "comments": "ufCrm81_1714101862"
+    },
+    "knee_glass_square_meter": {
+        "type": "material",
+        "value": "ufCrm81_1714101889",
+        "amount": "ufCrm81_1714101929",
+        "comments": "ufCrm81_1714101946"
+    },
+    "hardware": {
+        "type": "material",
+        "price": "ufCrm81_1714102208",
+        "value": "ufCrm81_1714102220",
+        "amount": "ufCrm81_1714102233",
+        "comments": "ufCrm81_1714102245"
+    },
+    "fabric1": {
+        "type": "fabric",
+        "number": 1,
+        "value": "ufCrm81_1714101977",
+        "amount": "ufCrm81_1714101984",
+        "comments": "ufCrm81_1714101997"
+    },
+    "wood": {
+        "type": "material",
+        "price": "ufCrm81_1714102029",
+        "value": "ufCrm81_1714102042",
+        "amount": "ufCrm81_1714102058",
+        "comments": "ufCrm81_1714102068"
+    },
+    "veneer": {
+        "type": "material",
+        "price": "ufCrm81_1714102092",
+        "value": "ufCrm81_1714102103",
+        "amount": "ufCrm81_1714102119",
+        "comments": "ufCrm81_1714102129"
+    },
+    "metal": {
+        "type": "material",
+        "price": "ufCrm81_1714102146",
+        "value": "ufCrm81_1714102164",
+        "amount": "ufCrm81_1714102177",
+        "comments": "ufCrm81_1714102187"
+    },
+    "decor1": {
+        "type": "material",
+        "price": "ufCrm81_1714102265",
+        "value": "ufCrm81_1714102296",
+        "amount": "ufCrm81_1714102333",
+        "comments": "ufCrm81_1714102359"
+    },
+    "decor2": {
+        "type": "material",
+        "price": "ufCrm81_1714102278",
+        "value": "ufCrm81_1714102321",
+        "amount": "ufCrm81_1714102348",
+        "comments": "ufCrm81_1714102376"
+    },
+    "other1": {
+        "type": "material",
+        "price": "ufCrm81_1714102411",
+        "value": "ufCrm81_1714102446",
+        "amount": "ufCrm81_1714102476",
+        "comments": "ufCrm81_1714102514"
+    },
+    "other2": {
+        "type": "material",
+        "price": "ufCrm81_1714102435",
+        "value": "ufCrm81_1714102465",
+        "amount": "ufCrm81_1714102502",
+        "comments": "ufCrm81_1714102530"
+    },
+    "subcontractor_work": {
+        "type": "material",
+        "price": "ufCrm81_1714102653",
+        "value": "ufCrm81_1714102672",
+        "amount": "ufCrm81_1714102684",
+        "comments": "ufCrm81_1714102697"
+    }
+}

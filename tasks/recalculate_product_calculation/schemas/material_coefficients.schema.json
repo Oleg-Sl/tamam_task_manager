@@ -1,0 +1,98 @@
+{
+    "mdf_6mm": {
+        "coefficient": "ufCrm33_1708830433",
+        "description": "ufCrm33_1708830698"
+    },
+    "mdf_10mm": {
+        "coefficient": "ufCrm33_1708830433",
+        "description": "ufCrm33_1708830698"
+    },
+    "mdf_15mm": {
+        "coefficient": "ufCrm33_1708830433",
+        "description": "ufCrm33_1708830698"
+    },
+    "mdf_19mm": {
+        "coefficient": "ufCrm33_1708830433",
+        "description": "ufCrm33_1708830698"
+    },
+    "mdf_25mm": {
+        "coefficient": "ufCrm33_1708830433",
+        "description": "ufCrm33_1708830698"
+    },
+    "ppu_el": {
+        "coefficient": "ufCrm33_1708830476",
+        "description": "ufCrm33_1708830738"
+    },
+    "ppu_el20mm": {
+        "coefficient": "ufCrm33_1708830476",
+        "description": "ufCrm33_1708830738"
+    },
+    "ppu_el30mm": {
+        "coefficient": "ufCrm33_1708830476",
+        "description": "ufCrm33_1708830738"
+    },
+    "ppu_el40mm": {
+        "coefficient": "ufCrm33_1708830476",
+        "description": "ufCrm33_1708830738"
+    },
+    "constant_costs": {
+        "coefficient": "ufCrm33_1711595356",
+        "description": "ufCrm33_1711595374"
+    },
+    "plywood_15mm": {
+        "coefficient": "ufCrm33_1713685572",
+        "description": "ufCrm33_1713685652"
+    },
+    "plywood_3mm": {
+        "coefficient": "ufCrm33_1713685670",
+        "description": "ufCrm33_1713685729"
+    },
+    "fiberboard": {
+        "coefficient": "ufCrm33_1713685670",
+        "description": "ufCrm33_1713685729"
+    },
+    "elec_cardboard": {
+        "coefficient": "ufCrm33_1734622134",
+        "description": "ufCrm33_1713685729"
+    },
+    "latex_30mm": {
+        "coefficient": "ufCrm33_1713685754",
+        "description": "ufCrm33_1713685774"
+    },
+    "memory_50mm": {
+        "coefficient": "ufCrm33_1713685754",
+        "description": "ufCrm33_1713685774"
+    },
+    "workshopConstantCosts": {
+        "coefficient": "ufCrm33_1713690241",
+        "description": "ufCrm33_1713690271"
+    },
+
+    "fabric1_smart": {
+        "coefficient": "ufCrm33_1714703414",
+        "description": "ufCrm33_1714703428"
+    },
+    "fabric1": {
+        "coefficient": "ufCrm33_1714703414",
+        "description": "ufCrm33_1714703428"
+    },
+    "fabric2": {
+        "coefficient": "ufCrm33_1714703414",
+        "description": "ufCrm33_1714703428"
+    },
+    "fabric3": {
+        "coefficient": "ufCrm33_1714703414",
+        "description": "ufCrm33_1714703428"
+    },
+    "markup": [
+        "ufCrm33_1723443658",
+        "ufCrm33_1723443712",
+        "ufCrm33_1723443727",
+        "ufCrm33_1723443743",
+        "ufCrm33_1723443945",
+        "ufCrm33_1723443956"
+    ],
+    "markup_workshop": {
+        "coefficient": "ufCrm33_1732255162"
+    }
+}
