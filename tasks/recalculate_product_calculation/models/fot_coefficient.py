@@ -24,6 +24,7 @@ class FotCoefficient:
 
     def get_staff_count(self, fot_name: str):
         return self._fot_coefficient[fot_name]['staff_count']
+        return self._fot_coefficient[fot_name]['staff_count']
 
     def get_base_salary_rate(self, fot_name: str):
         return self._fot_coefficient[fot_name]['base_salary_rate']

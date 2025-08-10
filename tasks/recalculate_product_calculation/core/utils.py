@@ -1,5 +1,13 @@
+import bisect
 import json
 import pathlib
+
+
+def bisect_left_with_key(a, x, key=None):
+    if key is None:
+        return bisect.bisect_left(a, x)
+    keys = [key(item) for item in a]
+    return bisect.bisect_left(keys, x)
 
 
 def load_schema(f_path: pathlib.Path):

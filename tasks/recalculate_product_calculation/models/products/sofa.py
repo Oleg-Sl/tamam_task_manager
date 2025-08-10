@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Union
 
 from ...models.products.product_base import ProductBase
 from ...models.fabrics import Fabric
@@ -11,14 +11,14 @@ class Sofa(ProductBase):
             1: self.context.fabric_registry.get(fabric_id_1),
         }
 
-    def get_fabric_id(self, num: int) -> int | None:
+    def get_fabric_id(self, num: int) -> Union[int, None]:
         if num == 1:
             return self._data['upholstery_fabric_collection_2']
 
-    def calc_base_value(self) -> float | None:
+    def calc_base_value(self) -> Union[float, None]:
         return self.calc_linear_meters()
 
-    def calc_square_meters(self) -> float | None:
+    def calc_square_meters(self) -> Union[float, None]:
         shape = self['shape']
         w = self['common_dimensions_width'] or 0
         d = self['common_dimensions_depth'] or 0
@@ -42,7 +42,7 @@ class Sofa(ProductBase):
             pass
         return 0
 
-    def calc_linear_meters(self) -> float | None:
+    def calc_linear_meters(self) -> Union[float, None]:
         shape = self['shape']
         w = self['common_dimensions_width'] or 0
         d = self['common_dimensions_depth'] or 0

@@ -1,6 +1,6 @@
 import math
 from pydantic import BaseModel
-from typing import Any, Dict, List, Callable
+from typing import Any, Dict, List, Callable, Union
 from datetime import datetime
 
 from ...core.utils import apply_mapping
@@ -10,15 +10,15 @@ from ...models.fabrics import Fabric
 
 
 class ValueField(BaseModel):
-    value: float | int | str | None
-    field: str | None
+    value: Union[float, int, str, None]
+    field: Union[str, None]
 
 
 class MaterialData(BaseModel):
     alias: str
     title: str
-    type_material: str | None
-    num_fabric: int | None
+    type_material: Union[str, None]
+    num_fabric: Union[int, None]
     has_price: bool
     coefficient: float
     price: ValueField
@@ -48,7 +48,7 @@ class CalculationBase:
         self.schema = schema
         self.context = context
 
-        self.data_callback: Callable[[], Dict] | None = None
+        self.data_callback: Union[Callable[[], Dict], None] = None
 
         self.fot_coefficient = self.context.fot_coef_registry.get_coefficients(self.product_type_id)
         self.fot_data = self.context.fot_registry.filter({f'parentId{self.calculation_type_id}': self.calculation_id})
@@ -72,6 +72,7 @@ class CalculationBase:
         self.init_fot()
 
     def init_materials(self):
+        print('init_materials')
         self.materials = []
         fabric = self.product_data['fabrics']
         for field_alias, field_data in self.schema.items():
@@ -103,9 +104,11 @@ class CalculationBase:
                 self.materials.append(material)
 
     def init_queries(self):
+        print('init_queries')
         queries = self.context.query_registry.get_by_type_product(self.product_type)
 
     def init_fot(self):
+        print('init_fot')
         self.calculation_fot.initialize()
 
     def register_data_callback(self, data_callback: Callable[[], Dict]):
@@ -132,7 +135,7 @@ class CalculationBase:
     def get_cost_price_total(self):
         return self.cost_price_total
 
-    def get_calculation_update_fields(self) -> Dict[str, str | float | str | None]:
+    def get_calculation_update_fields(self) -> Dict[str, Union[str, float, str, None]]:
         data = {
             self.get_field('date_of_calculation'): datetime.now().strftime('%Y-%m-%dT%H:%M:%S%z'),
             self.get_field('total_materials'): self.summary_materials,
@@ -149,7 +152,7 @@ class CalculationBase:
 
         return data
 
-    def get_fot_update_fields(self) -> Dict[str, str | float | str | None]:
+    def get_fot_update_fields(self) -> Dict[str, Union[str, float, str, None]]:
         return self.calculation_fot.get_update_fields()
 
     def recalculate(self):
@@ -241,182 +244,3 @@ class CalculationBase:
 
         return float(price) if isinstance(price, str) \
             else price if isinstance(price, int) or isinstance(price, float) else 0
-
-
-
-
-
-    # def execute(self):
-    #     print(f'\ncalculation_id={self.calculation_id}********************************')
-    #     print(f'product_id={self.product_data["product_id"]}********************************')
-    #
-    #     fabrics = self.product_data['fabrics']
-    #
-    #     self.material_calculator.initialize(fabrics)
-    #     self.fot_calculator.initialize()
-    #
-    #     material_summary_cost = self.material_calculator.get_summary_cost()
-    #     material_summary_cost_new = self.material_calculator.calc_summary_cost(
-    #         self.context.fot_coef_registry.get_coefficients(self.product_type_id).get_cost_per_unit('packaging'),
-    #         self.product_data['base_value']
-    #     )
-    #
-    #     fot_summary_cost = self.fot_calculator.get_summary_cost()
-    #     fot_summary_cost_new = self.fot_calculator.calc_summary_cost(
-    #         self.calc_service_packed_amount(),
-    #         self.calc_management_amount(),
-    #         self.calc_rent_amount()
-    #     )
-    #
-    #     new_cost_price = self.calc_cost_price()
-    #     new_cost_price_total = self.calc_cost_price_total()
-    #
-
-    # def get_calculation_summary_cost(self) -> EntityFieldSchema:
-    #     material_summary_cost = self.material_calculator.get_summary_cost()
-    #     material_summary_cost_new = self.material_calculator.calc_summary_cost(
-    #         self.context.fot_coef_registry.get_coefficients(self.product_type_id).get_cost_per_unit('packaging'),
-    #         self.product_data['base_value']
-    #     )
-    #
-    #     new_cost_price = self.calc_cost_price()
-    #     new_cost_price_total = self.calc_cost_price_total()
-    #
-    #     return EntityFieldSchema(
-    #         entity_type_id=self.calculation_type_id,
-    #         entity_id=self.calculation_id,
-    #         data=[
-    #             FieldSchema(
-    #                 field=self.schema['total_materials'],
-    #                 new_value=material_summary_cost_new,
-    #                 old_value=material_summary_cost
-    #             ),
-    #             FieldSchema(
-    #                 field=self.schema['cost_price'],
-    #                 new_value=new_cost_price,
-    #                 old_value=self.cost_price
-    #             ),
-    #             FieldSchema(
-    #                 field=self.schema['cost_price_total'],
-    #                 new_value=new_cost_price_total,
-    #                 old_value=self.cost_price_total
-    #             )
-    #         ]
-    #     )
-
-    # def get_fot_summary_cost(self) -> EntityFieldSchema | None:
-    #     fot_summary_cost = self.fot_calculator.get_summary_cost()
-    #     fot_summary_cost_new = self.fot_calculator.calc_summary_cost(
-    #         self.calc_service_packed_amount(),
-    #         self.calc_management_amount(),
-    #         self.calc_rent_amount()
-    #     )
-    #
-    #     if not self.fot_data:
-    #         return None
-    #
-    #     return EntityFieldSchema(
-    #         entity_type_id=self.fot_data.entity_type_id,
-    #         entity_id=self.fot_data.id,
-    #         data=[
-    #             FieldSchema(
-    #                 field=self.fot_data.get_field('summary_cost'),
-    #                 new_value=fot_summary_cost_new,
-    #                 old_value=fot_summary_cost
-    #             )
-    #         ]
-    #     )
-
-
-
-
-
-
-
-
-
-
-
-
-    # def calc_package(self) -> float | None:
-    #     price = self.context.fot_coef_registry.get_coefficients(self.product_type_id).get_cost_per_unit('packaging')
-    #     base_value = self.product_data['base_value']
-    #     amount = None
-    #     try:
-    #         amount = base_value * price
-    #     except ValueError:
-    #         pass
-    #     return amount
-
-    # def calc_cost_price(self):
-    #     markup_workshop = self.context.material_coef_registry.get_coefficient('markup_workshop')
-    #     self.cost_price = int(self.summary_materials + self.summary_fots / 100) * 100
-    #     self.total_cost_price = int(self.cost_price * markup_workshop / 100) * 100
-
-    # def calc_summary_materials(self) -> float | None:
-    #     if self.materials:
-    #         amount = sum(material.amount for material in self.materials if material.amount) + self.calc_package()
-    #         return amount
-
-    # def calc_summary_fots(self):
-    #     summary_fot = sum(fot.total for fot in self.fot_items) if self.fot_items else 0
-    #     summary_fot += self.cost_of_service_packed or 0
-    #     summary_fot += self.cost_of_management or 0
-    #     summary_fot += self.cost_of_rent or 0
-    #     return summary_fot
-
-
-
-    # def init_materials(self):
-    #     self.materials = []
-    #     for field_alias, field_data in self.schema.items():
-    #         if not isinstance(field_data, dict):
-    #             continue
-    #
-    #         if field_data.get('type') in ['material', 'fabric', 'others', 'package']:
-    #             self.materials.append(MaterialData(
-    #                 alias=field_alias,
-    #                 title='',
-    #                 coefficient=self.context.material_coef_registry.get_coefficient(field_alias),
-    #                 price=self._get_material_price(field_alias, field_data),
-    #                 value=self.data[field_alias]['value'],
-    #                 amount=self.data[field_alias]['amount'],
-    #                 comment=self.data[field_alias]['comments']
-    #             ))
-    #
-    #     self.summary_cost_of_fot = self.fot.summary_cost
-
-    # def init_fot_items(self):
-    #     if self.fot is None:
-    #         print(f'Fot for calculation id ={self.data["id"]} not found')
-    #         return
-    #
-    #     # print(f'Fot id = {self.fot.id} for calculation id ={self.data["id"]}')
-    #     self.fot_items = []
-    #     # for fot_name in self.fot.get_names():
-    #     for fot_name in self.fot:
-    #         fot_data = self.fot[fot_name]
-    #         self.fot_items.append(FotData(
-    #             fot_name=fot_name,
-    #             title=fot_data.get('title', ''),
-    #             estimate=fot_data.get('estimated_amount', 0),
-    #             allocated_hours=fot_data.get('allocated_hours', 0),
-    #             coefficient=fot_data.get('growth_coefficient', 0),
-    #             total=fot_data.get('final_amount', 0),
-    #             checksum=0,
-    #             basic_salary=self.context.fot_coef_registry.get_coefficients(self.product_type_id).get_base_salary_rate(fot_name),
-    #             comment=fot_data.get('comment', '')
-    #         ))
-
-    # def _get_material_price(self, field_alias: str, field_data: dict) -> float:
-    #     if 'price' in field_data:
-    #         price = self.data[field_alias]['price']
-    #     elif field_data.get('type') == 'fabric':
-    #         price = 0
-    #     else:
-    #         date_of_calculation_str = self.data['date_of_calculation']
-    #         date_of_calculation = datetime.datetime.strptime(date_of_calculation_str, '%Y-%m-%dT%H:%M:%S%z')
-    #         material = self.context.material_price_registry.get_closest_before(date_of_calculation)
-    #         price = material[field_alias]
-    #
-    #     return float(price) if isinstance(price, str) else price if isinstance(price, int) or isinstance(price, float) else 0

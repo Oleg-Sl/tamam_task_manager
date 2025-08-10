@@ -55,8 +55,8 @@ def recalculate() -> Dict[str, int]:
     calc_manager = CalculationManager(entity_fetcher, data_context)
 
     print('Выполнение расчетов')
-    # entity_types = ['armchair', 'bed', 'chair', 'melochevka', 'msp', 'nightstand', 'pouf', 'sofa', 'table']
-    entity_types = ['chair', ]
+    entity_types = ['armchair', 'bed', 'chair', 'melochevka', 'msp', 'nightstand', 'pouf', 'sofa', 'table']
+    # entity_types = ['chair', ]
     results = {}
     for entity_type in entity_types:
         count = calc_manager.recalculate(entity_type)

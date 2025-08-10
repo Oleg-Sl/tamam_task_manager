@@ -1,5 +1,5 @@
 import time
-from typing import List, Callable, Dict
+from typing import List, Callable, Dict, Union
 
 from .core.calculation_factory import CalculationFactory
 from .core.interfaces import IEntityFetcher
@@ -156,7 +156,7 @@ class CalculationManager:
             for raw_product in raw_products
         ]
 
-    def _update_entity(self, entity_type_id: int, entity_id: int, updated_fields: Dict[str, int | float | str | None]):
+    def _update_entity(self, entity_type_id: int, entity_id: int, updated_fields: Dict[str, Union[int, float,  str, None]]):
         if entity_type_id is None or entity_id is None or not updated_fields:
             return
         response = self.entity_fetcher.update(
@@ -165,128 +165,3 @@ class CalculationManager:
             data=updated_fields
         )
         return response
-
-
-
-
-
-
-    # def update_entity_fields(self, entity: dict | None):
-    #     if not entity:
-    #         return
-    #
-    #     # print("entity = ", entity.model_dump())
-    #     # data = {
-    #     #     field.field: field.new_value
-    #     #     for field in entity.data
-    #     #     if not field.old_value or field.old_value != field.new_value
-    #     # }
-    #     response = self.entity_fetcher.update(
-    #         entity_type_id=entity['entity_type_id'],
-    #         entity_id=entity['entity_id'],
-    #         data=entity['data']
-    #     )
-
-    # def update_entity(self, entity: EntityFieldSchema | None):
-    #     if not entity:
-    #         return
-    #
-    #     print("entity = ", entity.model_dump())
-    #     data = {
-    #         field.field: field.new_value
-    #         for field in entity.data
-    #         if not field.old_value or field.old_value != field.new_value
-    #     }
-    #     if not data:
-    #         return
-    #
-
-    # def process_entity_type(self, entity_type: str):
-    #     calculations = self.get_calculations(entity_type)
-    #     products = self.get_products(entity_type)
-    #
-    #     calculation_map: Dict[str, CalculationBase] = {
-    #         str(calculation['id']): calculation for calculation in calculations
-    #     }
-    #
-    #     for product in products:
-    #         if product['calculation_id'] is not None and product['calculation_id']:
-    #             calculation = calculation_map.get(str(product['calculation_id']))
-    #             if calculation:
-    #                 product.calculation = calculation
-    #                 calculation.register_data_callback(product.get_data_for_calculation)
-    #                 calculation.execute()
-    #                 calculation_summary_cost = calculation.get_calculation_summary_cost()
-    #                 fot_summary_cost = calculation.get_fot_summary_cost()
-    #                 self.update_entity(calculation_summary_cost)
-    #                 self.update_entity(fot_summary_cost)
-    #             else:
-    #                 print(f'Calculation with id = "{product["calculation_id"]}" not found,'
-    #                       f'for product {entity_type} with id = {product["id"]}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # print("data = ", data)
-        # response = self.entity_fetcher.update(
-        #     entity_type_id=entity.entity_type_id,
-        #     entity_id=entity.entity_id,
-        #     data=data
-        # )
-        # print("response = ", response)
-
-        # updated_product_list = []
-        # updated_fot_list = []
-
-        # for raw_calculation in raw_calculations:
-        #     # print('product_calculation_id = ', raw_calculation['id'])
-        #     calculation = CalculationFactory.create_calculation(entity_type, raw_calculation, self.data_context)
-        #     # print(calculation.calculation_type_id)
-        #     # break
-        #
-        #     materials_summary_cost = product_calculation.calc_materials_summary_cost()
-        #     current_materials_summary_cost = product_calculation.get_field_data('total_materials')
-        #
-        #     # print(materials_summary_cost, current_materials_summary_cost, current_materials_summary_cost == materials_summary_cost)
-        #
-        #     rent_cost = math.ceil(product_calculation.calc_rent_cost())
-        #     # print('rent_cost = ', rent_cost)
-        #
-        #     if not current_materials_summary_cost:
-        #         # updated_product_list.append({
-        #         #
-        #         # })
-        #         self.calculation_resolver.get_fot()
-        #         updated_fot_list.append({
-        #
-        #         })

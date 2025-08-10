@@ -1,5 +1,5 @@
 import math
-from typing import List, Dict
+from typing import List, Dict, Union
 from pydantic import BaseModel
 
 from ...models.fot_coefficient import FotCoefficient
@@ -8,8 +8,8 @@ from ...config.constants import ID_FOT
 
 
 class ValueField(BaseModel):
-    value: float | int | str | None
-    field: str | None
+    value: Union[float, int, str, None]
+    field: Union[str, None]
 
 
 class FotData(BaseModel):
@@ -25,14 +25,14 @@ class FotData(BaseModel):
 
 
 class CalculationFotBase:
-    def __init__(self, fot_coef: FotCoefficient, fot: Fot | None):
+    def __init__(self, fot_coef: FotCoefficient, fot: Union[Fot, None]):
         self.fot_coef = fot_coef
         self.fot = fot
 
         self.id = fot.id if fot else None
         self.fot_type_id = ID_FOT
 
-        self.fot_items: List[FotData] | None = None
+        self.fot_items: Union[List[FotData], None] = None
         self.summary_cost = self.fot.summary_cost if self.fot else 0
 
     def initialize(self):
@@ -77,7 +77,7 @@ class CalculationFotBase:
     def get_fots(self) -> List[FotData]:
         return self.fot_items
 
-    def get_update_fields(self) -> Dict[str, str | float | str | None]:
+    def get_update_fields(self) -> Dict[str, Union[str, float, str, None]]:
         data = {
             self.fot.get_field('summary_cost'): self.summary_cost
         }

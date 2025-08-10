@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 from pathlib import Path
 
 from ..core.utils import apply_mapping
@@ -43,7 +43,7 @@ class Fot:
     def get_field_template_potochka(self):
         return self.field_template_potochka
 
-    def get_field(self, field_alias: str) -> str | Dict:
+    def get_field(self, field_alias: str) -> Union[str, Dict]:
         return self.schema[field_alias]
 
     def update_field(self, schema):
@@ -71,7 +71,7 @@ class FotRegistry:
             if fot.id == fot_id:
                 return fot
 
-    def filter(self, filter_data: dict) -> Fot | None:
+    def filter(self, filter_data: dict) -> Union[Fot, None]:
         for fot in self._fots:
             for key, val in filter_data.items():
                 if key not in fot or fot[key] != val:

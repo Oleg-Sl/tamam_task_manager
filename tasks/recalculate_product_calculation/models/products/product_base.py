@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from ...core.utils import apply_mapping
 from ...data_context import DataContext
@@ -14,7 +14,7 @@ class ProductBase:
         self._data = apply_mapping(data, schema)
         self.schema = schema
         self.context = context
-        self.calculation: CalculationBase | None = None
+        self.calculation: Union[CalculationBase, None] = None
 
     def __getitem__(self, field: str) -> Any:
         return self._data.get(field, self._raw_data.get(field))
@@ -41,14 +41,14 @@ class ProductBase:
     def get_fabric(self) -> Dict[int, Fabric]:
         raise NotImplementedError
 
-    def get_fabric_id(self, num: int) -> int | None:
+    def get_fabric_id(self, num: int) -> Union[int, None]:
         raise NotImplementedError
 
-    def calc_base_value(self) -> float | None:
+    def calc_base_value(self) -> Union[float, None]:
         raise NotImplementedError
 
-    def calc_square_meters(self) -> float | None:
+    def calc_square_meters(self) -> Union[float, None]:
         raise NotImplementedError
 
-    def calc_linear_meters(self) -> float | None:
+    def calc_linear_meters(self) -> Union[float, None]:
         raise NotImplementedError

@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Union
 
 from ...models.products.product_base import ProductBase
 from ...models.fabrics import Fabric
@@ -15,7 +15,7 @@ class Msp(ProductBase):
             3: self.context.fabric_registry.get(fabric_id_3),
         }
 
-    def get_fabric_id(self, num: int) -> int | None:
+    def get_fabric_id(self, num: int) -> Union[int, None]:
         if num == 1:
             return self._data['upholstery_fabric_collection']
         if num == 2:
@@ -23,10 +23,10 @@ class Msp(ProductBase):
         if num == 3:
             return self._data['upholstery_fabric_collection_2']
 
-    def calc_base_value(self) -> float | None:
+    def calc_base_value(self) -> Union[float, None]:
         return self.calc_square_meters()
 
-    def calc_square_meters(self) -> float | None:
+    def calc_square_meters(self) -> Union[float, None]:
         try:
             # print(f"w = ", self['common_dimensions_width'])
             # print(f"d = ", self['common_dimensions_height'])
@@ -36,5 +36,5 @@ class Msp(ProductBase):
         except (TypeError, ValueError):
             pass
 
-    def calc_linear_meters(self) -> float | None:
+    def calc_linear_meters(self) -> Union[float, None]:
         return 0

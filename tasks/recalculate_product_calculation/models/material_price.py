@@ -11,6 +11,7 @@ except ImportError:
 
 from ..core.utils import apply_mapping
 from ..core.utils import load_schema
+from ..core.utils import bisect_left_with_key
 
 
 class MaterialPrice:
@@ -40,7 +41,7 @@ class MaterialPriceRegistry:
         return self._materials
 
     def get_closest_before(self, target_date: datetime) -> MaterialPrice:
-        ind = bisect.bisect_left(self._materials, target_date, key=lambda el: el.date)
+        ind = bisect_left_with_key(self._materials, target_date, key=lambda el: el.date)
         return self._materials[ind] if ind < len(self._materials) else self._materials[-1]
 
     def get_last(self) -> MaterialPrice:

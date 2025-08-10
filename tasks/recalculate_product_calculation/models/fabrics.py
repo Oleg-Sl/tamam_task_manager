@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 from pathlib import Path
 
 from ..core.utils import apply_mapping
@@ -42,7 +42,7 @@ class FabricRegistry:
     def get_all(self) -> List[Fabric]:
         return self._fabrics
 
-    def filter(self, filter_data: dict) -> Fabric | None:
+    def filter(self, filter_data: dict) -> Union[Fabric, None]:
         for fabric in self._fabrics:
             if all(key in fabric and fabric[key] == val for key, val in filter_data.items()):
                 return fabric
