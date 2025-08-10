@@ -3,7 +3,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('tasks/', include('tasks.urls')),
+    path('task-manager/admin/', admin.site.urls),
+    path('task-manager/accounts/', include('django.contrib.auth.urls')),
+    path('task-manager/tasks/', include('tasks.urls')),
 ]

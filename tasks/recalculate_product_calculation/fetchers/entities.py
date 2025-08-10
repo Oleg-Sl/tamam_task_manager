@@ -49,5 +49,6 @@ class EntityFetcher(IEntityFetcher):
             'id': entity_id,
             'fields': data
         })
+
         result = response.get('result', {})
         return result
