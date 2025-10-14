@@ -21,6 +21,12 @@ def recalculate_product(request):
     except TaskType.DoesNotExist:
         return JsonResponse({'error': 'Invalid task_type'}, status=404)
 
+    if product_type_id is None:
+        return JsonResponse({'error': 'product_type_id is required'}, status=400)
+
+    if product_id is None:
+        return JsonResponse({'error': 'product_id is required'}, status=400)
+
     task = Task.objects.create(
         task_type=task_type,
         input_data={
