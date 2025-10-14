@@ -1,5 +1,5 @@
 import time
-from typing import List, Callable, Dict, Union
+from typing import List, Callable, Dict, Union, Any
 
 from .core.calculation_factory import CalculationFactory
 from .core.interfaces import IEntityFetcher
@@ -63,9 +63,31 @@ class CalculationManager:
             #     }
             # )
 
-    def recalculate(self, calc_type: str):
-        calculations = self._get_calculations(calc_type)
-        products = self._get_products(calc_type)
+    def recalculate_one_product(self, product_type_id: int, product_id: int):
+        calc_type = CalculationFactory.get_product_name_by_type_id(product_type_id)
+        return self.recalculate(
+            calc_type,
+            calculation_data={f'parentId{product_type_id}': product_id},
+            product_data={'id': product_id}
+        )
+        # calculations = self._get_calculations(calc_type, {f'parentId{product_type_id}': product_id})
+        # products = self._get_products(calc_type, {'id': product_id})
+        # print('Calculation type = ', calc_type)
+        # print('Calculations = ', calculations)
+        # print('Products = ', products)
+        # print('Calculations = ', len(calculations))
+        # print('Products = ', len(products))
+
+        # calculation_type_id = CalculationFactory.get_calculation_type_id(entity_type)
+        # calculation_type_id =
+        # raw_calculations = self.entity_fetcher.fetch(entity_type_id=calculation_type_id)
+
+    def recalculate(self, calc_type: str,
+                    calculation_data: Dict[str, Any] = None,
+                    product_data: Dict[str, Any] = None
+                    ) -> int:
+        calculations = self._get_calculations(calc_type, calculation_data)
+        products = self._get_products(calc_type, product_data)
         self._register_calculation_to_product(products, calculations)
 
         template_calculations = [
@@ -140,17 +162,23 @@ class CalculationManager:
                 product.calculation = calculation
                 calculation.register_data_callback(product.get_data_for_calculation)
 
-    def _get_calculations(self, entity_type: str) -> List[CalculationBase]:
+    def _get_calculations(self, entity_type: str, filter_data: Dict[str, Any] = None) -> List[CalculationBase]:
+        if filter_data is None:
+            filter_data = {}
+
         calculation_type_id = CalculationFactory.get_calculation_type_id(entity_type)
-        raw_calculations = self.entity_fetcher.fetch(entity_type_id=calculation_type_id)
+        raw_calculations = self.entity_fetcher.fetch(entity_type_id=calculation_type_id, filter_data=filter_data)
         return [
             CalculationFactory.create_calculation(entity_type, raw_calculation, self.data_context)
             for raw_calculation in raw_calculations
         ]
 
-    def _get_products(self, entity_type: str) -> List[ProductBase]:
+    def _get_products(self, entity_type: str, filter_data: Dict[str, Any] = None) -> List[ProductBase]:
+        if filter_data is None:
+            filter_data = {}
+
         product_type_id = CalculationFactory.get_product_type_id(entity_type)
-        raw_products = self.entity_fetcher.fetch(entity_type_id=product_type_id)
+        raw_products = self.entity_fetcher.fetch(entity_type_id=product_type_id, filter_data=filter_data)
         return [
             CalculationFactory.create_product(entity_type, raw_product, self.data_context)
             for raw_product in raw_products
@@ -159,9 +187,11 @@ class CalculationManager:
     def _update_entity(self, entity_type_id: int, entity_id: int, updated_fields: Dict[str, Union[int, float,  str, None]]):
         if entity_type_id is None or entity_id is None or not updated_fields:
             return
+
         response = self.entity_fetcher.update(
             entity_type_id=entity_type_id,
             entity_id=entity_id,
             data=updated_fields
         )
+
         return response

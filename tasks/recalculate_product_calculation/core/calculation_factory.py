@@ -19,6 +19,8 @@ class ProductInfo(BaseModel):
 
 class CalculationFactory:
     _registry: Dict[str, ProductInfo] = {}
+    _registry_product_names: Dict[int, str] = {}
+    _registry_calculation_names: Dict[int, str] = {}
 
     @classmethod
     def register(cls,
@@ -38,6 +40,8 @@ class CalculationFactory:
             product_schema=load_schema(product_schema),
             calculation_schema=load_schema(calculation_schema)
         )
+        cls._registry_product_names[product_type_id] = name
+        cls._registry_calculation_names[calculation_type_id] = name
 
     @classmethod
     def create_calculation(cls, product_name: str, calculation_data: dict, context: DataContext) -> CalculationBase:
@@ -74,3 +78,12 @@ class CalculationFactory:
     def get_calculation_type_id(cls, product_name: str) -> int:
         cls_data: ProductInfo = cls._registry[product_name]
         return cls_data.calculation_type_id
+
+    @classmethod
+    def get_product_name_by_type_id(cls, type_id: int) -> str:
+        product_name = cls._registry_product_names[type_id]
+        if not product_name:
+            product_name = cls._registry_calculation_names[type_id]
+
+        return product_name
+

@@ -7,6 +7,23 @@ class EntityFetcher(IEntityFetcher):
     def __init__(self, client: BitrixClient):
         self.client = client
 
+    def fetch_one(self, **kwargs) -> dict:
+        entity_type_id = kwargs.get('entity_type_id')
+        entity_id = kwargs.get('entity_id')
+
+        if not entity_type_id:
+            raise ValueError('product_type_id is required')
+
+        if not entity_id:
+            raise ValueError('entity_id is required')
+
+        response = self.client.call('crm.item.get', {
+            'entityTypeId': entity_type_id,
+            'id': entity_id,
+        })
+        result = response.get('result', {}).get('item', {})
+        return result
+
     def fetch(self, **kwargs) -> list[dict]:
         entity_type_id = kwargs.get('entity_type_id')
         data = kwargs.get('filter_data', {})

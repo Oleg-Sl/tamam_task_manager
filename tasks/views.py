@@ -5,6 +5,33 @@ from users.models import UserToken
 from tasks.models import Task, TaskType
 
 
+def recalculate_product(request):
+    token = request.GET.get('token', None)
+    task_type_name = request.GET.get('task_type', None)
+    product_type_id = request.GET.get('product_type_id', None)
+    product_id = request.GET.get('product_id', None)
+
+    try:
+        user = UserToken.objects.get(token=token)
+    except UserToken.DoesNotExist:
+        return JsonResponse({'error': 'Invalid token'}, status=401)
+
+    try:
+        task_type = TaskType.objects.get(name=task_type_name)
+    except TaskType.DoesNotExist:
+        return JsonResponse({'error': 'Invalid task_type'}, status=404)
+
+    task = Task.objects.create(
+        task_type=task_type,
+        input_data={
+            'product_type_id': product_type_id,
+            'product_id': product_id,
+        }
+    )
+
+    return JsonResponse({'task': task.pk, 'task_type': task_type.name}, status=200)
+
+
 def recalculate_product_calculations(request):
     token = request.GET.get('token', None)
     task_type_name = request.GET.get('task_type', None)
