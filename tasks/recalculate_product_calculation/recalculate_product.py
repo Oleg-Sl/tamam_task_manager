@@ -58,10 +58,8 @@ def recalculate(params: Dict) -> Dict[str, int]:
     )
 
     calc_manager = CalculationManager(entity_fetcher, data_context)
-    print(f'calc_manager.recalculate_one_product({product_type_id}, {product_id})')
     count = calc_manager.recalculate_one_product(product_type_id, product_id)
-    print(count)
-
+    return {'count': count}
     # print('Выполнение расчетов')
     # entity_types = ['armchair', 'bed', 'chair', 'melochevka', 'msp', 'nightstand', 'pouf', 'sofa', 'table']
     # # entity_types = ['chair', ]

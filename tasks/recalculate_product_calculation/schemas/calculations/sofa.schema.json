@@ -33,6 +33,12 @@
         "amount": "ufCrm51_1713671963",
         "comments": "ufCrm51_1713671989"
     },
+    "plywood_6mm": {
+        "type": "material",
+        "value": "ufCrm51_1759809870",
+        "amount": "ufCrm51_1759809890",
+        "comments": "ufCrm51_1759809904"
+    },
     "plywood_3mm": {
         "type": "material",
         "value": "ufCrm51_1713672017",
@@ -185,11 +191,47 @@
         "amount": "ufCrm51_1713689643",
         "comments": "ufCrm51_1713689657"
     },
+    "decor_ceramics": {
+        "type": "material",
+        "price": "ufCrm51_1759650615",
+        "value": "ufCrm51_1759650649",
+        "amount": "ufCrm51_1759650668",
+        "comments": "ufCrm51_1759650686"
+    },
+    "decor_natural_veneer": {
+        "type": "material",
+        "price": "ufCrm51_1759650733",
+        "value": "ufCrm51_1759650755",
+        "amount": "ufCrm51_1759650778",
+        "comments": "ufCrm51_1759650791"
+    },
+    "decor_natural_stone": {
+        "type": "material",
+        "price": "ufCrm51_1759650805",
+        "value": "ufCrm51_1759650820",
+        "amount": "ufCrm51_1759650852",
+        "comments": "ufCrm51_1759650868"
+    },
+    "furniture_rubber": {
+        "type": "material",
+        "value": "ufCrm51_1759809941",
+        "amount": "ufCrm51_1759809972",
+        "comments": "ufCrm51_1759809993"
+    },
     "subcontractor_work": {
         "type": "others",
         "price": "ufCrm51_1714097309",
         "value": "ufCrm51_1714097346",
         "amount": "ufCrm51_1714097361",
         "comments": "ufCrm51_1714097376"
+    },
+    "package": {
+        "type": "package",
+        "price": "ufCrm51_1713689599",
+        "value": "ufCrm51_1713689617",
+        "amount": "ufCrm51_1713689643",
+        "comments": "ufCrm51_1713689657"
     }
+
+
 }
