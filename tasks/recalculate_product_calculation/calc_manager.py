@@ -64,7 +64,9 @@ class CalculationManager:
             # )
 
     def recalculate_one_product(self, product_type_id: int, product_id: int):
+        print(f'recalculate_one_product({product_type_id}, {product_id})')
         calc_type = CalculationFactory.get_product_name_by_type_id(product_type_id)
+        print(f'calc_type = ', calc_type)
         return self.recalculate(
             calc_type,
             calculation_data={f'parentId{product_type_id}': product_id},

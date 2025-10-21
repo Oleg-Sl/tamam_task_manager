@@ -23,7 +23,7 @@ class Command(BaseCommand):
                 task.result_data = json.dumps(result)
                 task.outcome = Task.Outcome.SUCCESS
             except Exception as err:
-                print(err)
+                print('Error: ', err)
                 task.result_data = str(err)
                 task.outcome = Task.Outcome.FAILED
             finally:
