@@ -30,8 +30,8 @@ def recalculate_product(request):
     task = Task.objects.create(
         task_type=task_type,
         input_data={
-            'product_type_id': product_type_id,
-            'product_id': product_id,
+            'product_type_id': int(product_type_id),
+            'product_id': int(product_id),
         }
     )
 
