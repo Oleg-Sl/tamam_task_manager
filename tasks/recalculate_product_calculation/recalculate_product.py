@@ -46,7 +46,7 @@ def recalculate(params: Dict) -> Dict[str, int]:
 
     print('Поучение ФОТ')
     fot_data = entity_fetcher.fetch(entity_type_id=ID_FOT, filter_data={f'parentId{product_type_id}': product_id})
-    # print(len(fot_data))
+    print('Кол-во элементов ФОТ: ', len(fot_data))
 
     data_context = DataContext.from_services(
         common_data['material_prices'],
@@ -58,6 +58,7 @@ def recalculate(params: Dict) -> Dict[str, int]:
     )
 
     calc_manager = CalculationManager(entity_fetcher, data_context)
+    print(f'calc_manager.recalculate_one_product({product_type_id}, {product_id})')
     count = calc_manager.recalculate_one_product(product_type_id, product_id)
     print(count)
 
