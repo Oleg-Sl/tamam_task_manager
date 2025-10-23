@@ -41,32 +41,34 @@ class CalculationFotBase:
             return
 
         self.fot_items = []
+
         for fot_name in self.fot:
             fot_data = self.fot[fot_name]
             fot_field = self.fot.get_field(fot_name)
+            print(f"fot[{fot_name}] = ", fot_data)
             self.fot_items.append(FotData(
                 fot_name=fot_name,
                 title=fot_data.get('title', ''),
                 basic_salary=self.fot_coef.get_base_salary_rate(fot_name),
                 checksum=0,
                 estimate=ValueField(
-                    value=fot_data.get('estimated_amount', 0),
+                    value=fot_data.get('estimated_amount', 0) or 0,
                     field=fot_field['estimated_amount']
                 ),
                 allocated_hours=ValueField(
-                    value=fot_data.get('allocated_hours', 0),
+                    value=fot_data.get('allocated_hours', 0) or 0,
                     field=fot_field['allocated_hours']
                 ),
                 coefficient=ValueField(
-                    value=fot_data.get('growth_coefficient', 0),
+                    value=fot_data.get('growth_coefficient', 0) or 0,
                     field=fot_field['growth_coefficient']
                 ),
                 total=ValueField(
-                    value=fot_data.get('final_amount', 0),
+                    value=fot_data.get('final_amount', 0) or 0,
                     field=fot_field['final_amount']
                 ),
                 comment=ValueField(
-                    value=fot_data.get('comment', 0),
+                    value=fot_data.get('comment', '') or '',
                     field=fot_field['comment']
                 )
             ))
@@ -92,6 +94,7 @@ class CalculationFotBase:
 
     def recalculate(self, cost_of_service_packed: float, cost_of_management: float, cost_of_rent: float):
         for fot in self.fot_items:
+            # print('fot = ', fot)
             cost_per_hour = self.fot_coef.get_cost_per_hour(fot.fot_name)
             fot.estimate.value = math.ceil(fot.allocated_hours.value * cost_per_hour / 100) * 100
             fot.total.value = math.ceil(fot.estimate.value + fot.coefficient.value * cost_per_hour)

@@ -169,7 +169,7 @@ class CalculationBase:
         fabrics = self.product_data['fabrics']
         material_prices = self.context.material_price_registry.get_last()
         for material in self.materials:
-            print('material = ', material)
+            # print('material = ', material)
             if material.type_material == 'fabric':
                 fabric = fabrics.get(material.num_fabric)
                 material.price.value = fabric['price'] or 0 if fabric else 0
@@ -179,7 +179,7 @@ class CalculationBase:
                 material.price.value = self.data[material.alias]['price'] if material.has_price else material_prices[material.alias]
                 material.price.value = float(material.price.value or 0)
                 material.amount.value = material.price.value * material.value.value * material.coefficient
-            print('material.amount.value = ', material.amount.value)
+            # print('material.amount.value = ', material.amount.value)
 
         print('='*88)
         self.summary_materials = self.calc_summary_cost()
