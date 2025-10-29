@@ -7,6 +7,7 @@ from ...core.utils import apply_mapping
 from ...data_context import DataContext
 from ...models.calculations.calculation_fot_base import CalculationFotBase
 from ...models.fabrics import Fabric
+# from ...models.economy import Economy
 
 
 class ValueField(BaseModel):
@@ -59,6 +60,9 @@ class CalculationBase:
         self.cost_price = self.data.get('cost_price')
         self.cost_price_total = self.data.get('cost_price_total')
         self.date_of_calculation = self.data.get('date_of_calculation')
+
+        # self.economy: Union[Economy, None] = None
+        self.economy = None
 
     def __getitem__(self, field: str) -> Any:
         return self.data.get(field, self.raw_data.get(field))
@@ -155,6 +159,9 @@ class CalculationBase:
     def get_fot_update_fields(self) -> Dict[str, Union[str, float, str, None]]:
         return self.calculation_fot.get_update_fields()
 
+    def get_economy_update_fields(self) -> Dict[str, Union[str, float, str, None]]:
+        return self.economy.get_update_fields()
+
     def recalculate(self):
         self.recalculate_materials()
         self.calculation_fot.recalculate(
@@ -164,6 +171,13 @@ class CalculationBase:
         )
         self.cost_price = self.calc_cost_price()
         self.cost_price_total = self.calc_cost_price_total()
+
+        self.economy_recalculate()
+
+    def economy_recalculate(self):
+        fabric_running_meters = self.get_fabric_running_meters()
+        print('fabric_running_meters = ', fabric_running_meters)
+        self.economy.recalculate(fabric_running_meters, self.cost_price_total)
 
     def recalculate_materials(self):
         fabrics = self.product_data['fabrics']
@@ -244,3 +258,13 @@ class CalculationBase:
 
         return float(price) if isinstance(price, str) \
             else price if isinstance(price, int) or isinstance(price, float) else 0
+
+    def get_fabric_running_meters(self):
+        fabric_running_meters = 0
+        fabrics = self.product_data['fabrics']
+
+        for material in self.materials:
+            if material.type_material == 'fabric':
+                # fabric = fabrics.get(material.num_fabric)
+                fabric_running_meters += +material.value.value
+        return fabric_running_meters

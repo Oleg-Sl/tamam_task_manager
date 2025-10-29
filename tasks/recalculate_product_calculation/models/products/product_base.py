@@ -32,7 +32,6 @@ class ProductBase:
             'frame_variant': self._data.get('frame_variant'),
             'is_template_potochka': self._data.get('is_template_potochka') == 'Y',
             'field_template_potochka': self.schema['is_template_potochka']
-
         }
 
     def is_template_of_potochka(self) -> bool:

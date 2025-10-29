@@ -25,6 +25,7 @@ from ..config.constants import SPCalculationID, SPProductID
 
 
 current_dir = Path(__file__).resolve().parent.parent
+economy_schema = pathlib.Path(current_dir / 'schemas/economy.schema.json')
 
 PRODUCT_CALCULATIONS = {
     'armchair': {

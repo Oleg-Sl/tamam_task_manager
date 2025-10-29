@@ -6,6 +6,8 @@ from .core.interfaces import IEntityFetcher
 from .data_context import DataContext
 from .models.products.product_base import ProductBase
 from .models.calculations.calculation_base import CalculationBase
+from .config.constants import ID_ECONOMY
+from .models.economy import Economy
 
 
 REQUEST_TIMEOUT = 1
@@ -88,7 +90,14 @@ class CalculationManager:
                     ) -> int:
         calculations = self._get_calculations(calc_type, calculation_data)
         products = self._get_products(calc_type, product_data)
+        economies = self._get_economies(calculation_data)
+        # print('calculations = ', calculations)
+        # print('products = ', products)
+        # print('economies = ', economies)
+        # return
+
         self._register_calculation_to_product(products, calculations)
+        self._register_economy_to_calculation(products, economies)
 
         template_calculations = [
             calculation for calculation in calculations if calculation.product_data.get('is_template_potochka')
@@ -102,6 +111,14 @@ class CalculationManager:
             print('calculation_id = ', calculation.calculation_id)
             print('fot_id = ', calculation.calculation_fot.id)
             calculation.recalculate()
+
+            print('***** ',  calculation.get_economy_update_fields())
+            #
+            # print(calculation.economy.economy_type_id)
+            # print(calculation.economy.economy_id)
+            # print(calculation.economy.get_update_fields())
+
+            # return
 
             print(calculation.get_calculation_update_fields())
             print(calculation.get_fot_update_fields())
@@ -120,6 +137,13 @@ class CalculationManager:
             )
             print('result_fot_update = ', result_fot_update)
             time.sleep(self.request_timeout)
+
+            result_economy_update = self._update_entity(
+                calculation.economy.economy_type_id,
+                calculation.economy.economy_id,
+                calculation.economy.get_update_fields()
+            )
+            print('result_economy_update = ', result_economy_update)
 
         return len(template_calculations)
 
@@ -162,6 +186,16 @@ class CalculationManager:
                 product.calculation = calculation
                 calculation.register_data_callback(product.get_data_for_calculation)
 
+    def _register_economy_to_calculation(self, products: List[ProductBase], economies: List[Economy]):
+        product_type_id = products[0]['entity_type_id']
+        product_map = {str(product['id']): product for product in products}
+        for economy in economies:
+            parent_product_id = economy[f'parentId{product_type_id}']
+            if parent_product_id and str(parent_product_id) in product_map:
+                product = product_map.get(str(parent_product_id))
+                if product.calculation:
+                    product.calculation.economy = economy
+
     def _get_calculations(self, entity_type: str, filter_data: Dict[str, Any] = None) -> List[CalculationBase]:
         if filter_data is None:
             filter_data = {}
@@ -182,6 +216,18 @@ class CalculationManager:
         return [
             CalculationFactory.create_product(entity_type, raw_product, self.data_context)
             for raw_product in raw_products
+        ]
+
+    def _get_economies(self, filter_data: Dict[str, Any] = None) -> List[Any]:
+        if filter_data is None:
+            filter_data = {}
+
+        raw_economies = self.entity_fetcher.fetch(entity_type_id=ID_ECONOMY, filter_data=filter_data)
+        # return raw_economies
+        # print('raw_economies = ', raw_economies)
+        return [
+            Economy(raw_economy, self.data_context)
+            for raw_economy in raw_economies
         ]
 
     def _update_entity(self, entity_type_id: int, entity_id: int, updated_fields: Dict[str, Union[int, float,  str, None]]):

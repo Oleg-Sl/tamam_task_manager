@@ -39,6 +39,8 @@ def recalculate() -> Dict[str, int]:
         'crm.item.list',
         {'entityTypeId': ID_FABRIC}
     )
+    # print(fabrics)
+    # return
 
     print('Поучение ФОТ')
     fot_data = entity_fetcher.fetch(entity_type_id=ID_FOT)

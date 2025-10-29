@@ -42,11 +42,14 @@ def recalculate(params: Dict) -> Dict[str, int]:
 
     # product = entity_fetcher.fetch_one(entity_type_id=product_type_id, entity_id=product_id)
 
-    fabrics = []
+    # fabrics = []
+    fabrics = common_data_fetcher.fetch_all(
+        'crm.item.list',
+        {'entityTypeId': ID_FABRIC}
+    )
 
     print('Поучение ФОТ')
     fot_data = entity_fetcher.fetch(entity_type_id=ID_FOT, filter_data={f'parentId{product_type_id}': product_id})
-    print('Кол-во элементов ФОТ: ', len(fot_data))
 
     data_context = DataContext.from_services(
         common_data['material_prices'],

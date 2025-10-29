@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 ID_FOT = 1048
 ID_FABRIC = 149
-
+ID_ECONOMY = 1074
 
 @dataclass(frozen=True)
 class SPProductID:

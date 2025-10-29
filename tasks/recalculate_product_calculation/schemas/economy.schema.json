@@ -1,0 +1,37 @@
+{
+    "base": {
+        "category_id": 317,
+        "smart_id": 3431,
+        "title": "Base",
+        "margin": "ufCrm105_1732552401",
+        "price": "ufCrm105_1732553260"
+    },
+    "base_plus": {
+        "category_id": 319,
+        "smart_id": 3433,
+        "title": "Base+",
+        "margin": "ufCrm105_1732553141",
+        "price": "ufCrm105_1732553289"
+    },
+    "premium": {
+        "category_id": 321,
+        "smart_id": 3435,
+        "title": "Premium",
+        "margin": "ufCrm105_1732553153",
+        "price": "ufCrm105_1732553302"
+    },
+    "premium_plus": {
+        "category_id": 495,
+        "smart_id": 3437,
+        "title": "Premium+",
+        "margin": "ufCrm105_1732553175",
+        "price": "ufCrm105_1732553328"
+    },
+    "limited": {
+        "category_id": 497,
+        "smart_id": 3439,
+        "title": "Limited",
+        "margin": "ufCrm105_1732553214",
+        "price": "ufCrm105_1732553340"
+    }
+}

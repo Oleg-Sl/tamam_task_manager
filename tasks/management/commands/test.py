@@ -13,7 +13,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         recalculate({
             'product_type_id': 158,
-            'product_id': 1951,
+            # 'product_id': 1951,
+            'product_id': 1953,
             # 'product_type_id': 189,
             # 'product_id': 1855,
         })

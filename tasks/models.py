@@ -53,4 +53,4 @@ class Task(models.Model):
         ordering = ('-arrival_date',)
 
     def __str__(self) -> str:
-        return f'{self.task_type.name} ({self.arrival_date})'
+        return f'{self.task_type.name} -  ({self.arrival_date})'
