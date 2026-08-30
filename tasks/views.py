@@ -27,6 +27,9 @@ def recalculate_product(request):
     if product_id is None:
         return JsonResponse({'error': 'product_id is required'}, status=400)
 
+    print('product_type_id = ', product_type_id)
+    print('product_id = ', product_id)
+
     task = Task.objects.create(
         task_type=task_type,
         input_data={

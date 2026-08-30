@@ -57,7 +57,7 @@ class Economy:
             margin = math.ceil(1000 * self._data[fabric_type]['price'] / total_cost) / 1000
             margin2 = self._data[fabric_type]['price']
 
-            print('margin', margin)
+            # print('margin', margin)
             self._data[fabric_type]['margin'] = margin
             # self._data[fabric_type]['total_cost'] = total_cost
 
